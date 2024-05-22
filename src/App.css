@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+
+/* Admin */
+
+.link-active {
+  color: #4b70e2;
+  border-left:3px solid #4b70e2 ;
+  padding-left: 5px;
+  border-radius: 2px;
+}
+.link-inactive {
+  color: rgb(97, 97, 97);
+}
+
+.product-add-to-cart {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 2rem;
+  font-weight: 400;
+  letter-spacing: 1.15px;
+  background-color: #4b70e2;
+  color: #f9f9f9;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: auto;
+  padding: 0 2rem;
+  margin-top: 0;
+}
