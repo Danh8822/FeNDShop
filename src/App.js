@@ -21,7 +21,9 @@ import ShopCategory from './components/Shopcategory/ShopCategory';
 import ProductsList from './components/admin/list/ProductsList';
 import Product from './components/Details/Product'
 import Order from './components/Details/Order'
-import UserProfile from './components/Details/UserProfile'
+import UserProfile from './components/Details/UserProfile';
+import Profile from './components/profile/Profile';
+import Dashboard1 from "./components/profile/Dashboard1";
 
 
 function App() {
@@ -52,6 +54,9 @@ function App() {
               <Route path="users" element={<Users />} />
               <Route path="orders" element={<Orders />} />
             </Route>
+            <Route path="/profile" element={<Dashboard1 />}>
+              <Route path="profile" element={<Profile />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
@@ -66,8 +71,9 @@ function FooterControlled() {
   const location = useLocation();
   // Kiểm tra xem trang hiện tại có phải là trang admin không
   const isAdminPage = location.pathname.startsWith("/admin");
+  const isProfilePage = location.pathname.startsWith("/profile");
   // Nếu là trang admin, không hiển thị Footer
-  if (isAdminPage) {
+  if (isAdminPage || isProfilePage) {
     return null;
   }
   return <Footer />;

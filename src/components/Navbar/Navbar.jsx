@@ -33,19 +33,24 @@ const Navbar = () => {
                 <button>Admin</button>
               </Link>
             </div>
-          ) : null}
+          ) : (
+            <div>
+              <Link to="/profile">
+                <button>profile</button>
+              </Link>
+            </div>
+          )}
           <div
             onClick={() => {
               dispatch(logoutUser(null));
               toast.warning("Logged out!", { position: "bottom-left" });
             }}
           >
-            <button>
-              Logout
-            </button>
-          </div>
           <Link to="/">
+            <button>Logout</button>
           </Link>
+          </div>
+          <Link to="/cart">
           <div className="nav-bag">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,13 +66,13 @@ const Navbar = () => {
               <span>{cartTotalQuantity}</span>
             </span>
           </div>
+          </Link>
         </Links>
       ) : (
         <AuthLinks>
           <Link to="/login">
             <button>Login</button>
           </Link>
-          {/* <Link to="register">Register</Link> */}
         </AuthLinks>
       )}
     </nav>
