@@ -13,7 +13,8 @@ const Chatbot = () => {
         setMessages(prevMessages => [userMessage, ...prevMessages]); // Sử dụng callback để cập nhật state
         setInputText('');
 
-        fetch('http://127.0.0.1:5000/predict', {
+        // fetch('http://127.0.0.1:5000/predict',
+        fetch('https://chatbotndshop.onrender.com/predict', {
             method: 'POST',
             body: JSON.stringify({ message: inputText }),
             headers: {
