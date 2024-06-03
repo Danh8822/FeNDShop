@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import './Home.css'
 import { addToCart } from "../../features/cartSlice";
-import banner_web from "../Assets/1.jpg"
+import banner_web from "../Assets/banner.jpg"
 import { Link } from "react-router-dom";
 import Chatbot from './Chatbot/Chatbot';
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
