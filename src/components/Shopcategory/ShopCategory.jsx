@@ -8,6 +8,7 @@ import dropdown_icon from '../Assets/dropdown_icon.png';
 
 
 
+
 const ShopCategory = (props) => {
     const { items: data } = useSelector((state) => state.products);
 
@@ -23,7 +24,7 @@ const ShopCategory = (props) => {
     // const {all_product} = useContext(ShopContext);
     return (
         <div className='shop-category'>
-            {/* <img className='shopcategory-banner' src={props.banner} alt="" /> */}
+            <img className='shopcategory-banner' src={props.banner} alt="" />
             <div className="shopcategory-indexSort">
                 <p>
                     <span>Showing 1-12</span> out of 36 products
@@ -57,7 +58,6 @@ const ShopCategory = (props) => {
             <div className="shopcategory-loadmore">
                 Explore More
             </div>
-
         </div>
     )
 }

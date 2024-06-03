@@ -1,31 +1,23 @@
 import styled from "styled-components";
 import { Outlet, NavLink } from "react-router-dom";
 // import { useSelector } from "react-redux";
-import { FaUsers} from "react-icons/fa";
+// import { FaUsers} from "react-icons/fa";
+import { FaUserEdit } from "react-icons/fa";
 
 
 const Dashboard1 = () => {
-//   const auth = useSelector((state) => state.auth);
-//   if (auth.isAdmin) 
     return (
         <StyledDashboard>
           <SideNav>
-            <h3>List</h3>
-            {/* <NavLink
-              className={({ isActive }) =>
-                isActive ? "link-active" : "link-inactive"
-              }
-              to="/profile/orders"
-            >
-             <FaClipboard/> Orders
-            </NavLink> */}
+            {/* <h3>List</h3> */}
+
             <NavLink
               className={({ isActive }) =>
                 isActive ? "link-active" : "link-inactive"
               }
               to="/profile/profile"
             >
-              <FaUsers/> My profile
+              <FaUserEdit /> My profile
             </NavLink>
           </SideNav>
           <Content>

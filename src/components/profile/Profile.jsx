@@ -85,6 +85,16 @@ const Profile = () => {
                                 <Customer>Customer</Customer>
                             )}
                         </div>
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="text"
+                            id="email"
+                            value={profileData.email}
+                            // onChange={(e) =>
+                            //     setProfileData({ ...profileData, email: e.target.value })
+                            // }
+                            readOnly
+                        />
                         <label htmlFor="name">Name:</label>
                         <input
                             type="text"
@@ -94,20 +104,12 @@ const Profile = () => {
                                 setProfileData({ ...profileData, name: e.target.value })
                             }
                         />
-                        <label htmlFor="email">Email:</label>
-                        <input
-                            type="text"
-                            id="email"
-                            value={profileData.email}
-                            onChange={(e) =>
-                                setProfileData({ ...profileData, email: e.target.value })
-                            }
-                        />
                         <button type="submit">
                             {updatingProfile ? "Updating..." : "Update Profile"}
                         </button>
                     </form>
                 </FormContainer>
+                <Divider />
                 <FormContainer>
                     <form onSubmit={handlePasswordSubmit}>
                         <h3>Change Password</h3>
@@ -141,61 +143,95 @@ const Profile = () => {
 
 export default Profile;
 
+
 const StyledProfile = styled.div`
-    margin: 3rem;
+    margin: 0.7rem;
     display: flex;
     justify-content: center;
 `;
 
 const ProfileContainer = styled.div`
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
     height: auto;
     display: flex;
+    /* flex-direction: column; */
     justify-content: space-between;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 10px;
     padding: 2rem;
+    background: #ffffff;
+`;
+
+const Divider = styled.div`
+    width: 2px;
+    background-color: #ddd;
+    margin: 0 1rem;
 `;
 
 const FormContainer = styled.div`
     flex: 1;
-    margin: 0 1rem;
+    margin: 1rem 2rem;
 
     form {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
 
         h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
         label {
-            margin-bottom: 0.2rem;
-            color: gray;
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-weight: 500;
         }
         input {
+            width: 100%;
             margin-bottom: 1rem;
+            padding: 0.5rem;
             outline: none;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            &:focus {
+                border-color: #007bff;
+            }
+        }
+        button {
+            /* align-self: flex-end; */
+            align-self: center;
+            padding: 0.5rem 1.5rem;
+            color: #fff;
+            background-color: #00483d;
             border: none;
-            border-bottom: 1px solid gray;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: #3fb90f;
+            }
         }
     }
 `;
 
 const Admin = styled.div`
-    color: rgb(253, 181, 40);
+    color: #fdb528;
     background: rgba(253, 181, 40, 0.12);
-    padding: 3px 5px;
+    padding: 3px 10px;
     border-radius: 3px;
     font-size: 14px;
     margin-bottom: 1rem;
 `;
 
 const Customer = styled.div`
-    color: rgb(38, 198, 249);
+    color: #26c6f9;
     background-color: rgba(38, 198, 249, 0.12);
-    padding: 3px 5px;
+    padding: 3px 10px;
     border-radius: 3px;
     font-size: 14px;
     margin-bottom: 1rem;

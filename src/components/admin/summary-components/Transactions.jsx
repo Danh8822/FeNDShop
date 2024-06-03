@@ -46,8 +46,10 @@ const Transactions = () => {
 export default Transactions;
 
 const StyledTransactions = styled.div`
-  background: rgb(48, 51, 78);
-  color: rgba(234, 234, 255, 0.87);
+  /* background: rgb(48, 51, 78); */
+  /* color: rgba(234, 234, 255, 0.87); */
+  background: #00483d;
+  color: #fff;
   padding: 1rem;
   border-radius: 5px;
 `;
@@ -58,11 +60,13 @@ const Transaction = styled.div`
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 3px;
-  background: rgba(38, 198, 249, 0.12);
+  /* background: rgba(38, 198, 249, 0.12); */
+  background: #124800;
   p {
     flex: 1;
   }
   &:nth-child(even) {
-    background: rgba(102, 108, 255, 0.12);
+    /* background: rgba(102, 108, 255, 0.12); */
+    background: #002348;
   }
 `;

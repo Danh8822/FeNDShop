@@ -75,21 +75,24 @@ const UserProfile = () => {
                 type="text"
                 id="name"
                 value={user.name}
-                onChange={(e) => setUser({ ...user, name: e.target.value})}   
+                onChange={(e) => setUser({ ...user, name: e.target.value})} 
+                
                 />
                 <label htmlFor="email">email:</label>
                 <input 
                 type="text"
                 id="email"
                 value={user.email}
-                onChange={(e) => setUser({ ...user, email: e.target.value})}   
+                // onChange={(e) => setUser({ ...user, email: e.target.value})}   
+                readOnly
                 />
                 <label htmlFor="password">Password:</label>
                 <input 
                 type="text"
                 id="password"
                 value={user.password}
-                onChange={(e) => setUser({ ...user, password: e.target.value})}   
+                // onChange={(e) => setUser({ ...user, password: e.target.value})}   
+                readOnly
                 />
                 <button>{updating ? "Updating" : "Update Profile"}</button>
             </form>  

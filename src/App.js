@@ -24,6 +24,11 @@ import Order from './components/Details/Order'
 import UserProfile from './components/Details/UserProfile';
 import Profile from './components/profile/Profile';
 import Dashboard1 from "./components/profile/Dashboard1";
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+
+import iphone_banner from './components/Assets/banner_iphone.jpg';
+import samsung_banner from './components/Assets/banner_samsung.jpg';
+import realme_banner from './components/Assets/banner_realme.jpg';
 
 
 function App() {
@@ -35,9 +40,9 @@ function App() {
         <div className="content-container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path='/iphone' element={<ShopCategory brand="iphone" />} />
-            <Route path='/samsung' element={<ShopCategory brand="samsung" />} />
-            <Route path='/realme' element={<ShopCategory brand="realme" />} />
+            <Route path='/iphone' element={<ShopCategory banner={iphone_banner} brand="iphone" />} />
+            <Route path='/samsung' element={<ShopCategory banner={samsung_banner} brand="samsung" />} />
+            <Route path='/realme' element={<ShopCategory banner={realme_banner} brand="realme" />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout-success" element={<CheckoutSucess />} />
             <Route path="/register" element={<Register />} />
@@ -60,7 +65,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
-        {/* <Footer /> */}
+        <ScrollToTop />
         <FooterControlled />
       </BrowserRouter>
     </div>
