@@ -61,7 +61,7 @@ const Transaction = styled.div`
   padding: 0.5rem;
   border-radius: 3px;
   /* background: rgba(38, 198, 249, 0.12); */
-  background: #124800;
+  background: #867fec;
   p {
     flex: 1;
   }

@@ -10,11 +10,8 @@ import AllTimeData from "./summary-components/AllTimeData";
 
 const Summary = () => {
   const [users, setUsers] = useState([]);
-  const [usersPerc, setUsersPerc] = useState(0);
   const [orders, setOrders] = useState([]);
-  const [ordersPerc, setOrdersPerc] = useState(0);
   const [income, setIncome] = useState([]);
-  const [incomePerc, setIncomePerc] = useState(0);
 
   function compare(a, b) {
     if (a._id < b._id) {
@@ -33,9 +30,9 @@ const Summary = () => {
 
         res.data.sort(compare);
         setUsers(res.data);
-        setUsersPerc(
-          ((res.data[0].total - res.data[1].total) / res.data[1].total) * 100
-        );
+        // setUsersPerc(
+        //   ((res.data[0].total - res.data[1].total) / res.data[1].total) * 100
+        // );
       } catch (err) {
         console.log(err);
       }
@@ -51,9 +48,6 @@ const Summary = () => {
 
         res.data.sort(compare);
         setOrders(res.data);
-        setOrdersPerc(
-          ((res.data[0].total - res.data[1].total) / res.data[1].total) * 100
-        );
       } catch (err) {
         console.log(err);
       }
@@ -69,9 +63,6 @@ const Summary = () => {
 
         res.data.sort(compare);
         setIncome(res.data);
-        setIncomePerc(
-          ((res.data[0].total - res.data[1].total) / res.data[1].total) * 100
-        );
       } catch (err) {
         console.log(err);
       }
@@ -88,25 +79,22 @@ const Summary = () => {
       title: "Users",
       color: "rgb(102, 108, 255)",
       bgColor: "rgba(102, 108, 255, 0.12)",
-      percentage: usersPerc,
     },
     {
       icon: <FaClipboard />,
-      digits: orders[1]?.total,
+      digits: orders[0]?.total,
       isMoney: false,
       title: "Orders",
       color: "rgb(38, 198, 249)",
       bgColor: "rgba(38, 198, 249, 0.12)",
-      percentage: ordersPerc,
     },
     {
       icon: <FaChartBar />,
-      digits: income[1]?.total ? income[1]?.total / 100 : "",
+      digits: income[0]?.total ? income[0]?.total / 100 : "",
       isMoney: true,
       title: "Earnings",
       color: "rgb(253, 181, 40)",
       bgColor: "rgba(253, 181, 40, 0.12)",
-      percentage: incomePerc,
     },
   ];
 
@@ -137,7 +125,7 @@ const Summary = () => {
 export default Summary;
 
 const StyledSummary = styled.div`
-  width: 100%;
+width: 100%;
   display: flex;
 `;
 

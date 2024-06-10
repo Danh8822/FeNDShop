@@ -50,8 +50,10 @@ const AllTimeData = () => {
 export default AllTimeData;
 
 const Main = styled.div`
-  background: rgb(48, 51, 78);
-  color: rgba(234, 234, 255, 0.87);
+  /* background: rgb(48, 51, 78); */
+  /* color: rgba(234, 234, 255, 0.87); */
+  background: #00483d;
+  color: white;
   margin-top: 1.5rem;
   border-radius: 5px;
   padding: 1rem;
@@ -63,9 +65,9 @@ const Info = styled.div`
   margin-top: 1rem;
   padding: 0.3rem;
   border-radius: 3px;
-  background: rgba(38, 198, 249, 0.12);
+  background: rgb(6, 2, 93);
   &:nth-child(even) {
-    background: rgba(102, 108, 255, 0.12);
+    background: rgb(97, 189, 212);
   }
 `;
 
