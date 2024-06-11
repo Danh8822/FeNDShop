@@ -15,7 +15,7 @@ const Chatbot = () => {
 
         // fetch('http://127.0.0.1:5000/predict',
         // fetch('https://chatbotndshop.onrender.com/predict'
-        fetch('http://127.0.0.1:5000/predict', {
+        fetch('https://chatbotndshop.onrender.com/predict', {
             method: 'POST',
             body: JSON.stringify({ message: inputText }),
             headers: {
@@ -74,7 +74,6 @@ const Chatbot = () => {
                     </div>
                 </div>
                 <div className="chatbox__button">
-                    {/* <button onClick={onClickChatbotButton}><img src={chatbot} alt="Chat" /></button> */}
                     <button onClick={onClickChatbotButton}><img width="36" height="29" src="https://img.icons8.com/arcade/64/chat.png" alt="chat"/></button>
                 </div>
             </div>
