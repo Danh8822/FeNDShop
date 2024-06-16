@@ -50,7 +50,7 @@ const Product = () => {
                 <h3>{product.name}</h3>
                 <p><span>Brand:</span> {product.brand}</p>
                 <p><span>Description:</span>{product.desc}</p>
-                <Price>{product.price?.toLocaleString()}₫</Price>
+                <Price>${product.price?.toLocaleString()}</Price>
                 <button className="product-add-to-cart" onClick={() => handleAddToCart(product)}>
                     Add to cart
                 </button>
